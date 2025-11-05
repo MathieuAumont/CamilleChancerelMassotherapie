@@ -167,15 +167,15 @@ html, body {
 }
 @font-face {
   font-family: vogue;
-  src: url("src/assets/Vogue.ttf");
+  src: url("/CamilleChancerelMassotherapie/Vogue.ttf");
 }
 @font-face {
   font-family: braven;
-  src: url("src/assets/BravenRegular.otf");
+  src: url("/CamilleChancerelMassotherapie/BravenRegular.otf");
 }
 @font-face {
   font-family: timeless;
-  src: url("src/assets/Timeless.ttf");
+  src: url("/CamilleChancerelMassotherapie/Timeless.ttf");
 }
 .hero h1 {
   font-size: 10em;
@@ -228,7 +228,7 @@ html, body {
 }
 
 .processus-masso {
-  background-image: url("src/assets/bgProcessusMasso.png");
+  background-image: url("/CamilleChancerelMassotherapie/bgProcessusMasso.png");
   background-size: cover;
   padding: 50px;
   text-align: center;
@@ -352,7 +352,7 @@ html, body {
 }
 
 .services {
-  background-image: url("src/assets/bgServices.png");
+  background-image: url("/CamilleChancerelMassotherapie/bgServices.png");
   background-size: 130%;
   background-position: center top;
   background-attachment: local;
@@ -374,7 +374,7 @@ html, body {
 }
 @font-face {
   font-family: myFont;
-  src: url(src/assets/font1.otf);
+  src: url("/CamilleChancerelMassotherapie/font1.otf");
 }
 .services-hero h1 {
   font-size: 6em;
