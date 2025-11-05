@@ -34,7 +34,7 @@ function RendezVousPage() {
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/CamilleChancerelMassotherapie">
       <ScrollToTop />
       <div>
         <header>
