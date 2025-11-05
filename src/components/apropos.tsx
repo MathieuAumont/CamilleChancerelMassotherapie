@@ -1,8 +1,10 @@
+import camilleBioImg from '/CamilleBioFleur.png';
+
 export default function Apropos() {
     return (
         <div className="apropos">
             <div className="apropos-img">
-                <img src="/CamilleChancerelMassotherapie/CamilleBioFleur.png" 
+                <img src={camilleBioImg} 
                 alt="Camille Chancerel"/>
             </div>
             <div className="bio">

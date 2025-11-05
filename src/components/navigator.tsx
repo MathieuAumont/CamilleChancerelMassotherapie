@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logoImg from '/CCLogoBold.png';
 
 const Navigator: React.FC = () => {
     const [mobileNavOpen, setMobileNavOpen] = React.useState(false);
@@ -12,7 +13,7 @@ const Navigator: React.FC = () => {
         <header className="headerNav">
             <div className="logoContainer">
                 <a href="/" className="logoLink">
-                    <img src="/CamilleChancerelMassotherapie/CCLogoBold.png" alt="Logo" className="logo" />
+                    <img src={logoImg} alt="Logo" className="logo" />
                 </a>
                 <div className="titleLogo">
                     <div>
