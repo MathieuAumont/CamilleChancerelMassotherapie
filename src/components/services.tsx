@@ -1,15 +1,7 @@
 
 import { useEffect, useState } from "react";
 import TypeMassage from "./typeMassage";
-
-interface Massage {
-    id: string;
-    title: string;
-    image: string;
-    description: string;
-    duration: string;
-    price: string;
-}
+import { massagesData, type Massage } from "../data/massages";
 
 export default function Services() {
     const [massages, setMassages] = useState<Massage[]>([]);
@@ -19,27 +11,16 @@ export default function Services() {
     const [onMobile, setOnMobile] = useState(false);
 
     useEffect(() => {
-        const fetchMassages = async () => {
-            try {
-                setLoading(true);
-                const response = await fetch('/massages.json');
-                
-                if (!response.ok) {
-                    throw new Error('Erreur lors du chargement des données');
-                }
-                
-                const data = await response.json();
-                setMassages(data.massages);
-                setError(null);
-            } catch (err) {
-                setError(err instanceof Error ? err.message : 'Une erreur est survenue');
-                console.error('Erreur lors du fetch:', err);
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        fetchMassages();
+        // Plus besoin de fetch, les données sont directement disponibles
+        try {
+            setMassages(massagesData.massages);
+            setError(null);
+        } catch (err) {
+            setError(err instanceof Error ? err.message : 'Une erreur est survenue');
+            console.error('Erreur lors du chargement des données:', err);
+        } finally {
+            setLoading(false);
+        }
     }, []);
 
     // Détection mobile

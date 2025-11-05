@@ -1,0 +1,185 @@
+// Types pour les données de massage
+export interface SystemeEffets {
+  nom: string;
+  effets: string[];
+}
+
+export interface BienfaitsSpecifiques {
+  description: string;
+  systemes: SystemeEffets[];
+}
+
+export interface FamilleManoeuvre {
+  nom: string;
+  description: string;
+  technique?: string;
+  buts?: string[];
+}
+
+export interface SequenceMassage {
+  description: string;
+  etapes: string[];
+}
+
+export interface DescriptionMassage {
+  introduction: string;
+  composition: string;
+  objectif: string;
+}
+
+export interface Massage {
+  id: string;
+  title: string;
+  image: string;
+  description: DescriptionMassage | string;
+  familles_manoeuvres?: FamilleManoeuvre[];
+  sequence_massage?: SequenceMassage;
+  bienfaits_specifiques?: BienfaitsSpecifiques;
+  duration: string;
+  price: string;
+}
+
+export const massagesData: { massages: Massage[] } = {
+  "massages": [
+    {
+      "id": "suedois",
+      "title": "Massage Suédois",
+      "image": "https://lapausehygge.fr/wp-content/uploads/2020/06/i101526-.webp",
+      "description": {
+        "introduction": "Les techniques du massage suédois visent principalement la masse musculaire et les articulations.",
+        "composition": "Il est composé de différentes familles de manœuvres spécifiques à l'objectif du soin.",
+        "objectif": "Un massage réussi se doit d'être englobant et élaboré selon les besoins du client."
+      },
+      "familles_manoeuvres": [],
+      "sequence_massage": {
+        "description": "Les bienfaits du massage se répercutent sur différents systèmes du corps.",
+        "etapes": []
+      },
+      "bienfaits_specifiques": {
+        "description": "Voici les bienfaits du massage suédois selon différents systèmes :",
+        "systemes": [
+          {
+            "nom": "Système circulatoire",
+            "effets": [
+              "Il stimule la circulation sanguine vers le cœur",
+              "Il renforce le système immunitaire"
+            ]
+          },
+          {
+            "nom": "Système digestif",
+            "effets": [
+              "Il aide à la digestion",
+              "Il encourage grandement l'action du foie"
+            ]
+          },
+          {
+            "nom": "Système respiratoire",
+            "effets": [
+              "Il améliore la capacité du système respiratoire"
+            ]
+          },
+          {
+            "nom": "Système urinaire",
+            "effets": [
+              "Il stimule l'activité des reins"
+            ]
+          },
+          {
+            "nom": "Système nerveux",
+            "effets": [
+              "Il diminue la tension sur le système nerveux périphérique",
+              "Il diminue la sécrétion de cortisol, hormone du stress"
+            ]
+          },
+          {
+            "nom": "Système musculo-squelettique",
+            "effets": [
+              "Il améliore la souplesse et débloque les tensions musculaires",
+              "Il permet d'éliminer plus rapidement les toxines",
+              "Il facilite l'autonettoyage de la peau"
+            ]
+          }
+        ]
+      },
+      "duration": "90 minutes",
+      "price": "100$"
+    },
+    {
+      "id": "detente",
+      "title": "Massage de détente",
+      "image": "https://www.spa-nord.com/wp-content/uploads/2020/06/young-woman-enjoying-massage-in-spa-salon_t20_Qzm14y.jpg",
+      "description": {
+        "introduction": "Le massage suédois de détente consiste en un enchaînement consécutif de quatre familles de manœuvres de base sur un segment corporel.",
+        "composition": "Il se compose d'effleurages, de foulages, de pétrissages et de drainages.",
+        "objectif": "Ce massage vise la relaxation globale du corps et la libération des tensions musculaires."
+      },
+      "familles_manoeuvres": [
+        {
+          "nom": "Effleurages",
+          "description": "Les effleurages permettent de créer un contact, de relier les différentes familles de manœuvres et de conclure la séquence de la région massée.",
+          "technique": "Glissements faits sur la peau avec toute la surface de la main, allant de superficiel à profond."
+        },
+        {
+          "nom": "Foulages",
+          "description": "Les foulages sont des glissements répétés des pouces, dont la pression s'effectue en alternance et sous forme d'ouverture en « V ».",
+          "buts": [
+            "Dissocier, séparer et réchauffer les structures tissulaires sur le même plan",
+            "Rechercher les contractures",
+            "Informer sur l'état musculaire"
+          ]
+        },
+        {
+          "nom": "Pétrissages",
+          "description": "Les pétrissages sont des manœuvres profondes permettant une compression, un soulèvement et une torsion de la masse musculaire.",
+          "buts": [
+            "Associer et dissocier les plans musculaires"
+          ]
+        },
+        {
+          "nom": "Drainages",
+          "description": "Les drainages sont des glissements lents et progressifs, exécutés de distal à proximal, favorisant la circulation des liquides corporels.",
+          "buts": [
+            "Favoriser l'équilibre liquidien du corps",
+            "Évacuer les déchets libérés par les manœuvres précédentes"
+          ]
+        }
+      ],
+      "sequence_massage": {
+        "description": "Voici la séquence habituelle des segments massés lors d'un massage suédois de détente (toutes variantes sont permises) :",
+        "etapes": [
+          "Dos et cou",
+          "Cuisse, jambe et pied postérieurs du côté droit ou gauche",
+          "Cuisse, jambe et pied postérieurs de l'autre côté",
+          "Cuisse, jambe et pied antérieurs du côté droit ou gauche",
+          "Cuisse, jambe et pied antérieurs de l'autre côté",
+          "Bras, avant-bras et main du côté droit ou gauche",
+          "Bras, avant-bras et main de l'autre côté",
+          "Région du thorax supérieur",
+          "Visage et cuir chevelu"
+        ]
+      },
+      "bienfaits_specifiques": {
+        "description": "Les bienfaits principaux du massage de détente sont la relaxation générale, la réduction du stress et l'amélioration de la circulation corporelle.",
+        "systemes": []
+      },
+      "duration": "90 minutes",
+      "price": "100$"
+    },
+    {
+      "id": "therapeutique",
+      "title": "Massage thérapeutique",
+      "image": "https://www.tanden-medecinechinoise.fr/wp-content/uploads/2021/05/tuina-tanden-coaching.jpg",
+      "description": "Massage ciblé pour soulager les tensions musculaires et les douleurs spécifiques.",
+      "duration": "90 minutes",
+      "price": "100$"
+    },
+    {
+      "id": "deep",
+      "title": "Deep Tissue",
+      "image": "https://i.ytimg.com/vi/zdyRPzPQrFw/maxresdefault.jpg",
+      "description": "Massage en profondeur pour traiter les tensions chroniques et les nœuds musculaires.",
+      "duration": "75 minutes",
+      "price": "95$"
+    }
+  ]
+};

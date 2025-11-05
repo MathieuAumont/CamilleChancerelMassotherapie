@@ -1,5 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { massagesData } from "../data/massages";
 
 interface FamilleManoeuvre {
   nom: string;
@@ -54,33 +55,27 @@ function TypeMassage({ massageId }: TypeMassageProps) {
   const currentMassageId = massageId || typeId;
 
   useEffect(() => {
-    const fetchMassage = async () => {
+    const loadMassage = () => {
       try {
         setLoading(true);
-        const response = await fetch('/massages.json');
-        
-        if (!response.ok) {
-          throw new Error('Erreur lors du chargement des données');
-        }
-        
-        const data = await response.json();
-        const foundMassage = data.massages.find((m: Massage) => m.id === currentMassageId);
+        const foundMassage = massagesData.massages.find((m) => m.id === currentMassageId);
         
         if (foundMassage) {
           setMassage(foundMassage);
+          setError(null);
         } else {
           setError('Service non trouvé');
         }
       } catch (err) {
         setError(err instanceof Error ? err.message : 'Une erreur est survenue');
-        console.error('Erreur lors du fetch:', err);
+        console.error('Erreur lors du chargement des données:', err);
       } finally {
         setLoading(false);
       }
     };
 
     if (currentMassageId) {
-      fetchMassage();
+      loadMassage();
     }
   }, [currentMassageId]);
 
