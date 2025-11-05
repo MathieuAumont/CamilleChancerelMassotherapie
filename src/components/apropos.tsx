@@ -2,7 +2,7 @@ export default function Apropos() {
     return (
         <div className="apropos">
             <div className="apropos-img">
-                <img src="CamilleChancerelMassotherapie/camilleBioFleur.png" 
+                <img src="/CamilleChancerelMassotherapie/camilleBioFleur.png" 
                 alt="Camille Chancerel"/>
             </div>
             <div className="bio">

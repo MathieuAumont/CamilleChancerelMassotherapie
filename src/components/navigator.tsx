@@ -12,7 +12,7 @@ const Navigator: React.FC = () => {
         <header className="headerNav">
             <div className="logoContainer">
                 <a href="/" className="logoLink">
-                    <img src="CamilleChancerelMassotherapie/CCLogoBold.png" alt="Logo" className="logo" />
+                    <img src="/CamilleChancerelMassotherapie/CCLogoBold.png" alt="Logo" className="logo" />
                 </a>
                 <div className="titleLogo">
                     <div>
