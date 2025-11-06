@@ -357,7 +357,6 @@ html, body {
   background-position: center top;
   background-attachment: local;
   padding: 50px;
-  margin-top: 100px;
   text-align: center;
   color: #525786;
   display: flex;
@@ -465,7 +464,6 @@ html, body {
   display:flex;
   flex-direction: row;
   color:#525786;
-  margin-top:100px;
   gap: 100px;
 }
 
