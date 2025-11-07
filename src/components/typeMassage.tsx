@@ -42,19 +42,29 @@ interface Massage {
 
 interface TypeMassageProps {
   massageId?: string; // Prop optionnelle pour passer l'ID directement
+  massageData?: Massage; // Prop optionnelle pour passer les données directement
 }
 
-function TypeMassage({ massageId }: TypeMassageProps) {
+function TypeMassage({ massageId, massageData }: TypeMassageProps) {
   const { typeId } = useParams();
   const [massage, setMassage] = useState<Massage | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [showMore, setShowMore] = useState<boolean>(false);
   
-  // Utiliser massageId en prop ou typeId depuis l'URL
-  const currentMassageId = massageId || typeId;
-
+  // Utiliser massageData directement si fourni, sinon chercher par ID
   useEffect(() => {
+    if (massageData) {
+      // Si les données sont passées directement, les utiliser
+      setMassage(massageData);
+      setLoading(false);
+      setError(null);
+      return;
+    }
+
+    // Sinon, chercher par ID
+    const currentMassageId = massageId || typeId;
+    
     const loadMassage = () => {
       try {
         setLoading(true);
@@ -77,7 +87,7 @@ function TypeMassage({ massageId }: TypeMassageProps) {
     if (currentMassageId) {
       loadMassage();
     }
-  }, [currentMassageId]);
+  }, [massageId, typeId, massageData]);
 
   if (loading) {
     return (

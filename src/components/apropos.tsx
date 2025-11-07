@@ -1,4 +1,4 @@
-import camilleBioImg from '/CamilleBioFleur.png';
+import camilleBioImg from '/CamilleChancerel.jpg';
 
 export default function Apropos() {
     return (

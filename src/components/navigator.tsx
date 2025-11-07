@@ -12,7 +12,7 @@ const Navigator: React.FC = () => {
     return (
         <header className="headerNav">
             <div className="logoContainer">
-                <a href="/" className="logoLink">
+                <a href="/CamilleChancerelMassotherapie/" className="logoLink">
                     <img src={logoImg} alt="Logo" className="logo" />
                 </a>
                 <div className="titleLogo">
@@ -25,19 +25,10 @@ const Navigator: React.FC = () => {
             {/* Navigation desktop */}
             <div className="navContainer desktop-nav">
                 <nav className="navLinks">
-                    <Link to="/" className="navLink">
-                        Accueil
-                    </Link>
-                    <Link to="/about" className="navLink">
-                        À propos
-                    </Link>
-                    <Link to="/services" className="navLink">
-                        Services 
-                    </Link>
                 </nav>
                 <Link to="/rendez-vous">
                     <button id='btn-Nav'>
-                        Prendre un rendez-vous
+                     Prendre un rendez-vous 🌼​
                     </button>
                 </Link>
             </div>
@@ -59,15 +50,6 @@ const Navigator: React.FC = () => {
             {mobileNavOpen && (
                 <div className="mobile-nav-menu">
                     <nav className="mobile-nav-links">
-                        <Link to="/" className="mobile-nav-link" onClick={toggleMobileNav}>
-                            Accueil
-                        </Link>
-                        <Link to="/about" className="mobile-nav-link" onClick={toggleMobileNav}>
-                            À propos
-                        </Link>
-                        <Link to="/services" className="mobile-nav-link" onClick={toggleMobileNav}>
-                            Services 
-                        </Link>
                         <Link to="/rendez-vous">
                             <button 
                                 className="mobile-nav-btn" 

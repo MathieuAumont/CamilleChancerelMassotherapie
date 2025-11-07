@@ -8,20 +8,63 @@
 html, body {
   margin: 0;
   padding: 0;
-  background-color: #f1afbd;
 }
 
 .headerNav {
-  background-color: rgba(255, 255, 255, 0.8);
-  position : fixed;
+  background-color: rgba(207, 224, 255, 0.5);
+  backdrop-filter: blur(5px);
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   padding-right: 0%;
   display: flex;
-  justify-content: space-between;
-  border: 1px solid #ccc;
   z-index: 1000;
+}
+
+/* Élément de transition avec bandes qui rétrécissent */
+.header-transition {
+  position: relative;
+  height: 200px;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.transition-band {
+  margin: 0 auto;
+  background-color: rgb(255, 207, 207);
+}
+
+.band-1 {
+  width: 100%;
+  height: 10px;
+  background-color: rgb(255, 207, 207);
+}
+
+.band-2 {
+  width: 100%;
+  height: 40px;
+  background-color: rgb(255, 207, 207);
+}
+
+.band-3 {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(255, 207, 207);
+}
+
+.band-4 {
+  width: 100%;
+  height: 20px;
+  background-color: rgb(255, 207, 207);
+}
+
+.band-5 {
+  width: 100%;
+  height: 10px;
+  background-color: rgb(255, 207, 207);
 }
 
 .logoContainer {
@@ -31,8 +74,8 @@ html, body {
 }
 
 .headerNav .logo {
-  height:95px;
-  width: 95px;
+  height: 130px;
+  width: 130px;
 }
 
 .titleLogo {  
@@ -72,17 +115,23 @@ html, body {
 }
 
 .navContainer button {
-  background: rgb(212, 140, 226);
+  background: rgb(255, 172, 172);
   border: none;
   padding: 10px 20px;
   color: #332d2d;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  border-radius: 25px;
+  border: 1px solid #000000;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
   font-weight: 500;
   cursor: pointer;
   margin-right: 1rem
 } 
 
+.navContainer button:hover {
+  transform: translate(0, -2px);
+  background: rgb(255, 120, 206);
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.15);
+}
 /* Styles pour le menu hamburger */
 .mobile-nav-container {
   display: none;
@@ -114,15 +163,13 @@ html, body {
   top: 100%;
   left: 0;
   right: 0;
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: rgba(207, 224, 255, 0.5);
   z-index: 1000;
 }
 
 .mobile-nav-links {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
   padding: 20px;
   gap: 20px;
 }
@@ -141,20 +188,19 @@ html, body {
 }
 
 .mobile-nav-btn {
-  background: rgb(212, 140, 226);
+  background: rgb(255, 172, 172);
   border: none;
-  padding: 15px 20px;
+  padding: 10px 20px;
   color: #332d2d;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  border-radius: 25px;
+  border: 1px solid #000000;
+  box-shadow: 0 5px 7px rgba(0, 0, 0, 0.1);
   font-weight: 500;
   cursor: pointer;
-  width: 100%;
-  margin-top: 10px;
 } 
 
 .hero {
-  background-image: url("https://pub-static.fotor.com/assets/bg/c29b82e6-4f99-43b4-ac6c-edf333a8b5c8.jpg");
+  background-image: url("/CamilleChancerelMassotherapie/bgHero.svg");
   background-size: cover;
   background-position: center;
   display: flex;
@@ -164,6 +210,8 @@ html, body {
   color: white;
   text-shadow: 2px 4px 8px rgba(0, 0, 0, 0.7);
   height: 100vh;
+  margin-top: -135px;
+  padding-top: 80px;
 }
 @font-face {
   font-family: vogue;
@@ -403,24 +451,23 @@ html, body {
 }
 
 .service-photo h3 {
-  font-size: 1em;
+  font-size: 1.2em;
   margin-bottom: 5px;
   display: flex;
-  justify-content: start;
+  justify-content: end;
   font-weight: bold;
   color:#525786;
+  padding-right: 5px;
 }
 
 
 .service-photo-link img {
-  width: 200px;
+  max-width: 210px;
   height: 150px;
   object-fit: cover;
-}
-
-.service-photo-link img {
   transition: transform 0.3s ease;
 }
+
 
 .service-photo-link img:hover {
   transform: scale(1.06);
@@ -612,19 +659,21 @@ html, body {
 
   /* Hero Section */
   .hero {
-    height: 400px;
+    
+    height: 50vh;
     padding: 1rem;
     justify-content: center;
     text-align: center;
+    margin-top: 0px;
   }
   
   .hero h1 {
-    font-size: 2.5em;
+    font-size: 3em !important;
     margin: 0;
   }
 
   .hero h2 {
-    font-size: 1.5em;
+    font-size: 2em !important;
     margin: 0.5rem 0;
   }
 
@@ -711,7 +760,6 @@ html, body {
     flex-direction: column;
     gap: 30px;
     text-align: center;
-    margin-top: 80px;
   }
   
   .apropos h1 {
