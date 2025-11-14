@@ -723,6 +723,7 @@ html, body {
   .services {
     flex-direction: column;
     padding: 20px;
+    /* height: auto; */
   }
   
   .services-hero h1 {
